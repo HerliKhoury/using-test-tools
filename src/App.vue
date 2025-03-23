@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Login />
+    <Login data-testid="login-component"/>
   </div>
 </template>
 

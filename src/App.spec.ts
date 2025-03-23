@@ -12,9 +12,9 @@ describe("Test - App.vue file",
             }
         )
         
-        test("Deve haver uma imagem na página", async () => {
-            const { getByRole } = render(App);
-            expect(await getByRole("img")).toBeInTheDocument();
+        test("Deve haver componente Login página", async () => {
+            const { getByTestId } = render(App);
+            expect(await getByTestId("login-component")).toBeInTheDocument();
         });
     }
 )

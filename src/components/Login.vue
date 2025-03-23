@@ -2,7 +2,7 @@
 <template>
   <div class="login-container">
     <form @submit.prevent="handleLogin" class="login-form">
-      <h2>Login </h2>      
+      <h2>Login Form</h2>      
       <div class="input-group">
         <label for="username">Username</label>
         <input
