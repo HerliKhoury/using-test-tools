@@ -1,18 +1,15 @@
 <template>
   <div>
-    <Login data-testid="login-component"/>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import Login from './components/Login.vue';
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-export default {
-  name: 'App',
-  components: {
-    Login,
-  },
-};
+export default defineComponent({
+  name: 'App'
+});
 </script>
 
 <style>

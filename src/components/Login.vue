@@ -34,25 +34,29 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
   name: 'LoginPage',
   data() {
     return {
-      username: '',
-      password: '',
+      username: '' as string,
+      password: '' as string,
     };
   },
   methods: {
-    handleLogin() {
+    handleLogin(): void {
       // Add your login logic here (e.g., API call)
       console.log('Login attempted with:', {
         username: this.username,
         password: this.password,
       });
+      // Redirect to main page after successful login
+      this.$router.push('/main');
     },
   },
-};
+});
 </script>
 
 <style scoped>
