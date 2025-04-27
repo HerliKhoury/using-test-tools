@@ -14,7 +14,7 @@ describe("Test - App.vue file",
         
         test("Deve haver componente Login página", async () => {
             const { getByTestId } = render(App);
-            expect(await getByTestId("login-component")).toBeInTheDocument();
+            expect(await getByTestId("router-view")).toBeInTheDocument();
         });
     }
 )

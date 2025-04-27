@@ -3,6 +3,19 @@ import { describe, expect, test } from 'vitest';
 import Login from '../Login.vue';
 
 describe('Test - Login.vue component', () => {
+    // Create a function that renders with mocked router
+    const renderWithMockRouter = () => {
+      return render(Login, {
+        global: {
+          mocks: {
+            $router: {
+              push: vi.fn()
+            }
+          }
+        }
+      });
+    };
+    
   // Test rendering of the heading
   test('should display "Login Form" heading', () => {
     const { getByText } = render(Login);
@@ -39,7 +52,7 @@ describe('Test - Login.vue component', () => {
 
   // Test login button
   test('should render login button and trigger form submission', async () => {
-    const { getByText } = render(Login);
+    const { getByText } = renderWithMockRouter();
     const loginButton = getByText('Login'); // Define loginButton here
     
     expect(loginButton).toBeInTheDocument();
@@ -61,7 +74,7 @@ describe('Test - Login.vue component', () => {
 
   // Test form submission with inputs filled
   test('should log username and password on form submission', async () => {
-    const { getByLabelText, getByText } = render(Login);
+    const { getByLabelText, getByText } = renderWithMockRouter();
     
     // Fill inputs
     const usernameInput = getByLabelText('Username');
