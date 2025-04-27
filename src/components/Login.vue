@@ -2,31 +2,19 @@
 <template>
   <div class="login-container">
     <form @submit.prevent="handleLogin" class="login-form">
-      <h2>Login Form</h2>      
+      <h2>Login Form</h2>
       <div class="input-group">
         <label for="username">Username</label>
-        <input
-          v-model="username"
-          type="text"
-          id="username"
-          placeholder="Enter your username"
-          required
-        />
+        <input v-model="username" type="text" id="username" placeholder="Enter your username" required />
       </div>
-      
+
       <div class="input-group">
         <label for="password">Password</label>
-        <input
-          v-model="password"
-          type="password"
-          id="password"
-          placeholder="Enter your password"
-          required
-        />
+        <input v-model="password" type="password" id="password" placeholder="Enter your password" required />
       </div>
-      
+
       <button type="submit" class="login-btn">Login</button>
-      
+
       <p class="signup-link">
         Don't have an account? <a href="#">Sign up</a>
       </p>
