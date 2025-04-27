@@ -10,7 +10,14 @@ describe("Test - App.vue file", () => {
   });
 
   test("Deve haver componente Login página", async () => {
-    const { getByTestId } = render(App);
+    const { getByTestId } = render(App, {
+      global: {
+        stubs: {
+          'router-view': true  // This creates a simple stub that will render with the same attributes
+        }
+      }
+    });
+    
     expect(await getByTestId("router-view")).toBeInTheDocument();
   });
 });
